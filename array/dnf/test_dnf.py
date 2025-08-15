@@ -1,4 +1,4 @@
-from dnf import dnf
+from array.dnf.sortColors.sortColors import dnf
 
 
 def test_empty():
