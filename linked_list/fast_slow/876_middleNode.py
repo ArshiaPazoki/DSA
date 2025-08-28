@@ -15,16 +15,15 @@ class LinkedList:
             current = current.next
 
 class Solution:
-    def getDecimalValue(self, head:Optional[ListNode]) -> int:
-        answer = 0
-        current = head
-        while current:
-            answer = (answer << 1) | current.val
-            current = current.next
-        return answer
+    def middleNode(self, head:Optional[ListNode]) -> Optional[ListNode]:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
             
 
 if __name__ == '__main__':
-    values = [1,0,1]
-    print(Solution().getDecimalValue(LinkedList(values).head))
+    values = [1,2,3,4,5]
+    print(Solution().middleNode(LinkedList(values).head))
 
